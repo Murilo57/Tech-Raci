@@ -1,0 +1,27 @@
+unit Unt_Fornecedor;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Grids, DBGrids, ComCtrls;
+
+type
+  TFornecedor = class(TForm)
+    PageCentro: TPageControl;
+    TSfornecedor: TTabSheet;
+    GridCentro: TDBGrid;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Fornecedor: TFornecedor;
+
+implementation
+
+{$R *.dfm}
+
+end.

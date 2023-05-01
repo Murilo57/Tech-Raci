@@ -1,0 +1,72 @@
+object Form4: TForm4
+  Left = 0
+  Top = 0
+  Caption = 'Produtos'
+  ClientHeight = 577
+  ClientWidth = 835
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object PageCentro: TPageControl
+    Left = 0
+    Top = 0
+    Width = 835
+    Height = 577
+    ActivePage = TSprodutos
+    Align = alClient
+    TabOrder = 0
+    ExplicitWidth = 643
+    ExplicitHeight = 273
+    object TSprodutos: TTabSheet
+      Caption = 'Produtos'
+      ImageIndex = 3
+      ExplicitWidth = 635
+      ExplicitHeight = 245
+      object GridProdutos: TDBGrid
+        Left = 0
+        Top = 0
+        Width = 827
+        Height = 549
+        Align = alClient
+        TabOrder = 0
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'ID'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'TIPO'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'DESCRICAO'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'CUSTO'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'LUCRO'
+            Visible = True
+          end>
+      end
+    end
+  end
+end

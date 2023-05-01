@@ -1,0 +1,75 @@
+unit Unit_Produtos;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Grids, DBGrids, ComCtrls, FMTBcd, DB, DBClient, Provider, SqlExpr,
+  Menus, ExtCtrls, StdCtrls;
+
+type
+  TFrmProdutos = class(TForm)
+    PageCentro: TPageControl;
+    TSprodutos: TTabSheet;
+    GridProdutos: TDBGrid;
+    sqlProdutos: TSQLDataSet;
+    dspProdutos: TDataSetProvider;
+    cdsProdutos: TClientDataSet;
+    cdsProdutosID: TIntegerField;
+    cdsProdutosTIPO: TStringField;
+    cdsProdutosDESCRICAO: TStringField;
+    cdsProdutosCUSTO: TFMTBCDField;
+    cdsProdutosLUCRO: TFMTBCDField;
+    dtsProdutos: TDataSource;
+    PnlTop: TPanel;
+    PnlProdutos: TPanel;
+    LblProdutos: TLabel;
+    PnlLogo: TPanel;
+    Image1: TImage;
+    MainMenu1: TMainMenu;
+    Configuraes1: TMenuItem;
+    Novo1: TMenuItem;
+    Abrir1: TMenuItem;
+    N1: TMenuItem;
+    Salvar1: TMenuItem;
+    SalvarTudo1: TMenuItem;
+    N2: TMenuItem;
+    Sair1: TMenuItem;
+    Usurios1: TMenuItem;
+    Administradores1: TMenuItem;
+    Funcionarios1: TMenuItem;
+    Clientes2: TMenuItem;
+    Clientes1: TMenuItem;
+    Cadastrar1: TMenuItem;
+    Registros1: TMenuItem;
+    Excluir1: TMenuItem;
+    Produtos1: TMenuItem;
+    Vendidos1: TMenuItem;
+    Estoque1: TMenuItem;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmProdutos: TFrmProdutos;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFrmProdutos.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  FrmProdutos.Free;
+end;
+
+procedure TFrmProdutos.FormCreate(Sender: TObject);
+begin
+  cdsProdutos.Open;
+  PageCentro.ActivePage := TSprodutos;
+end;
+
+end.

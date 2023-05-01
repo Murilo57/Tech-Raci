@@ -1,0 +1,117 @@
+unit Unt_Cliente;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Grids, DBGrids, ComCtrls, FMTBcd, DB, DBClient, Provider, SqlExpr,
+  Menus, ExtCtrls, StdCtrls;
+
+type
+  TFrmClientes = class(TForm)
+    PageCentro: TPageControl;
+    TsConsulta: TTabSheet;
+    GridFornecedor: TDBGrid;
+    sqlCliente: TSQLDataSet;
+    dspCliente: TDataSetProvider;
+    cdsCliente: TClientDataSet;
+    cdsClienteID: TIntegerField;
+    cdsClienteFANTASIA: TStringField;
+    cdsClienteRAZAOSOCIAL: TStringField;
+    cdsClienteCNPJ: TStringField;
+    cdsClienteDDD: TStringField;
+    cdsClienteTELEFONE: TStringField;
+    dtsCliente: TDataSource;
+    PnlTop: TPanel;
+    PnlProdutos: TPanel;
+    LblClientes: TLabel;
+    PnlLogo: TPanel;
+    ImgClientes: TImage;
+    MainMenu1: TMainMenu;
+    Configuraes1: TMenuItem;
+    Novo1: TMenuItem;
+    Abrir1: TMenuItem;
+    N1: TMenuItem;
+    Salvar1: TMenuItem;
+    SalvarTudo1: TMenuItem;
+    N2: TMenuItem;
+    Sair1: TMenuItem;
+    Usurios1: TMenuItem;
+    Administradores1: TMenuItem;
+    Funcionarios1: TMenuItem;
+    Clientes2: TMenuItem;
+    Clientes1: TMenuItem;
+    Cadastrar1: TMenuItem;
+    Registros1: TMenuItem;
+    Excluir1: TMenuItem;
+    Produtos1: TMenuItem;
+    Vendidos1: TMenuItem;
+    Estoque1: TMenuItem;
+    GroupFiltro: TGroupBox;
+    CboxConsulta: TComboBox;
+    BtnConsulta: TButton;
+    EdtConsulta: TEdit;
+    procedure BtnConsultaClick(Sender: TObject);
+
+    procedure FormActivate(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmClientes: TFrmClientes;
+
+implementation
+
+{$R *.dfm}
+
+
+
+procedure TFrmClientes.BtnConsultaClick(Sender: TObject);
+begin
+  // Locate ... localiza o registro ...
+//  cdsCliente.Locate(CboxConsulta.Text,EdtConsulta.Text,[]);
+
+  // Filtro com Sql ...
+  cdsCliente.Close;
+  sqlCliente.CommandText := 'Select * From CADCLIENTE CLI where '+CboxConsulta.Text+' = '+QuotedStr(EdtConsulta.Text);
+
+
+  cdsCliente.Open;
+
+
+//  with cdsCliente do
+//  begin
+//    if CboxConsulta.Text = 'ID' then
+//      begin
+//        close;
+//        sql.clear;
+//        sql.add('SELECT * FROM CADCLIENTE WHERE '+CboxConsulta.Text+ ' = :EdtConsulta');
+//        ParamByName('EdtConsulta').AS
+//      end;
+//  end;
+end;
+
+procedure TFrmClientes.FormActivate(Sender: TObject);
+begin
+//    var i: integer;
+//    for i := 0 to dtsCliente.Fields.Count -1 do;
+//    CboxID.Items.Add(dtsCliente[i].fields);
+end;
+
+procedure TFrmClientes.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  FrmClientes.Free
+end;
+
+procedure TFrmClientes.FormCreate(Sender: TObject);
+begin
+ cdsCliente.Open;
+ PageCentro.ActivePage := TsConsulta;
+end;
+
+end.

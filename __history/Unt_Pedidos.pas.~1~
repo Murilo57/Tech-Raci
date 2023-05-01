@@ -1,0 +1,32 @@
+unit Unt_Pedidos;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Grids, DBGrids, ComCtrls, ExtCtrls, StdCtrls;
+
+type
+  TFrmPedidos = class(TForm)
+    PnlTop: TPanel;
+    PnlProdutos: TPanel;
+    LblProdutos: TLabel;
+    PnlLogo: TPanel;
+    ImgList: TImage;
+    PageCentro: TPageControl;
+    TsConsulta: TTabSheet;
+    DBGrid1: TDBGrid;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmPedidos: TFrmPedidos;
+
+implementation
+
+{$R *.dfm}
+
+end.

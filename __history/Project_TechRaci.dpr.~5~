@@ -1,0 +1,21 @@
+program Project_TechRaci;
+
+uses
+  Forms,
+  Unt_TechRaci in 'Unt_TechRaci.pas' {Form1},
+  conexao.tech in 'conexao.tech.pas' {DataModule1: TDataModule},
+  Unt_Cliente in 'Unt_Cliente.pas' {Form2},
+  Unt_Fornecedor in 'Unt_Fornecedor.pas' {Fornecedor},
+  Unit_Produtos in 'Unit_Produtos.pas' {Form4};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TDataModule1, DataModule1);
+  Application.CreateForm(TForm2, Form2);
+  Application.CreateForm(TFornecedor, Fornecedor);
+  Application.CreateForm(TForm4, Form4);
+  Application.Run;
+end.

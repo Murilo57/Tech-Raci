@@ -1,0 +1,49 @@
+unit Unt_Nota_Fiscal;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Menus, ExtCtrls, StdCtrls;
+
+type
+  TFrmNotaFiscal = class(TForm)
+    PnlTop: TPanel;
+    PnlProdutos: TPanel;
+    LblProdutos: TLabel;
+    PnlLogo: TPanel;
+    Image1: TImage;
+    MainMenu1: TMainMenu;
+    Configuraes1: TMenuItem;
+    Novo1: TMenuItem;
+    Abrir1: TMenuItem;
+    N1: TMenuItem;
+    Salvar1: TMenuItem;
+    SalvarTudo1: TMenuItem;
+    N2: TMenuItem;
+    Sair1: TMenuItem;
+    Usurios1: TMenuItem;
+    Administradores1: TMenuItem;
+    Funcionarios1: TMenuItem;
+    Clientes2: TMenuItem;
+    Clientes1: TMenuItem;
+    Cadastrar1: TMenuItem;
+    Registros1: TMenuItem;
+    Excluir1: TMenuItem;
+    Produtos1: TMenuItem;
+    Vendidos1: TMenuItem;
+    Estoque1: TMenuItem;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmNotaFiscal: TFrmNotaFiscal;
+
+implementation
+
+{$R *.dfm}
+
+end.

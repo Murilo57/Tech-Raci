@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/02/17 13:55:51.356.pas,C:\Documents and Settings\Aldo\Meus documentos\Projetos Delphi\Tech Raci'\Unit1.pas=C:\Documents and Settings\Aldo\Meus documentos\Projetos Delphi\Tech Raci'\conexao.tech.pas</Transaction>
+    <Transaction>2023/02/17 13:55:51.356.dfm,C:\Documents and Settings\Aldo\Meus documentos\Projetos Delphi\Tech Raci'\Unit1.dfm=C:\Documents and Settings\Aldo\Meus documentos\Projetos Delphi\Tech Raci'\conexao.tech.dfm</Transaction>
+    <Transaction>2023/02/22 14:45:21.663.pas,C:\Documents and Settings\Aldo\Meus documentos\Projetos Delphi\Tech Raci'\Unit2.pas=C:\Documents and Settings\Aldo\Meus documentos\Projetos Delphi\Tech Raci'\Unt_Cliente.pas</Transaction>
+    <Transaction>2023/02/22 14:45:21.663.dfm,C:\Documents and Settings\Aldo\Meus documentos\Projetos Delphi\Tech Raci'\Unit2.dfm=C:\Documents and Settings\Aldo\Meus documentos\Projetos Delphi\Tech Raci'\Unt_Cliente.dfm</Transaction>
+    <Transaction>2023/02/22 14:45:32.446.pas,C:\Documents and Settings\Aldo\Meus documentos\Projetos Delphi\Tech Raci'\Unit3.pas=C:\Documents and Settings\Aldo\Meus documentos\Projetos Delphi\Tech Raci'\Unt_Fornecedor.pas</Transaction>
+    <Transaction>2023/02/22 14:45:32.446.dfm,C:\Documents and Settings\Aldo\Meus documentos\Projetos Delphi\Tech Raci'\Unit3.dfm=C:\Documents and Settings\Aldo\Meus documentos\Projetos Delphi\Tech Raci'\Unt_Fornecedor.dfm</Transaction>
+    <Transaction>2023/02/22 14:45:42.991.pas,C:\Documents and Settings\Aldo\Meus documentos\Projetos Delphi\Tech Raci'\Unit4.pas=C:\Documents and Settings\Aldo\Meus documentos\Projetos Delphi\Tech Raci'\Unit_Produtos.pas</Transaction>
+    <Transaction>2023/02/22 14:45:42.991.dfm,C:\Documents and Settings\Aldo\Meus documentos\Projetos Delphi\Tech Raci'\Unit4.dfm=C:\Documents and Settings\Aldo\Meus documentos\Projetos Delphi\Tech Raci'\Unit_Produtos.dfm</Transaction>
+    <Transaction>2023/02/23 14:24:48.809.pas,C:\Documents and Settings\Aldo\Meus documentos\Projetos Delphi\Tech Raci'\Unit1.pas=C:\Documents and Settings\Aldo\Meus documentos\Projetos Delphi\Tech Raci'\Unt_Pedidos.pas</Transaction>
+    <Transaction>2023/02/23 14:24:48.809.dfm,C:\Documents and Settings\Aldo\Meus documentos\Projetos Delphi\Tech Raci'\Unit1.dfm=C:\Documents and Settings\Aldo\Meus documentos\Projetos Delphi\Tech Raci'\Unt_Pedidos.dfm</Transaction>
+    <Transaction>2023/02/23 15:10:13.434.pas,C:\Documents and Settings\Aldo\Meus documentos\Projetos Delphi\Tech Raci'\Unit1.pas=C:\Documents and Settings\Aldo\Meus documentos\Projetos Delphi\Tech Raci'\Unt_Nota_Fiscal.pas</Transaction>
+    <Transaction>2023/02/23 15:10:13.434.dfm,C:\Documents and Settings\Aldo\Meus documentos\Projetos Delphi\Tech Raci'\Unit1.dfm=C:\Documents and Settings\Aldo\Meus documentos\Projetos Delphi\Tech Raci'\Unt_Nota_Fiscal.dfm</Transaction>
+    <Transaction>2023/02/23 15:45:23.276.pas,C:\Documents and Settings\Aldo\Meus documentos\Projetos Delphi\Tech Raci'\Unit1.pas=C:\Documents and Settings\Aldo\Meus documentos\Projetos Delphi\Tech Raci'\Unt_Prestador.pas</Transaction>
+    <Transaction>2023/02/23 15:45:23.276.dfm,C:\Documents and Settings\Aldo\Meus documentos\Projetos Delphi\Tech Raci'\Unit1.dfm=C:\Documents and Settings\Aldo\Meus documentos\Projetos Delphi\Tech Raci'\Unt_Prestador.dfm</Transaction>
+    <Transaction>2023/02/23 16:45:26.416.pas,C:\Documents and Settings\Aldo\Meus documentos\Projetos Delphi\Tech Raci'\Unit1.pas=C:\Documents and Settings\Aldo\Meus documentos\Projetos Delphi\Tech Raci'\Unt_Estoque.pas</Transaction>
+    <Transaction>2023/02/23 16:45:26.416.dfm,C:\Documents and Settings\Aldo\Meus documentos\Projetos Delphi\Tech Raci'\Unit1.dfm=C:\Documents and Settings\Aldo\Meus documentos\Projetos Delphi\Tech Raci'\Unt_Estoque.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

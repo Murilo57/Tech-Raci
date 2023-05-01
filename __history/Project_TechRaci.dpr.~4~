@@ -1,0 +1,15 @@
+program Project_TechRaci;
+
+uses
+  Forms,
+  Unt_TechRaci in 'Unt_TechRaci.pas' {Form1},
+  conexao.tech in 'conexao.tech.pas' {DataModule1: TDataModule};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TDataModule1, DataModule1);
+  Application.Run;
+end.

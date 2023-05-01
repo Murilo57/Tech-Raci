@@ -1,0 +1,147 @@
+unit Unt_TechRaci;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ExtCtrls, jpeg, Buttons, ActnList, ImgList, Menus, FMTBcd,
+  Grids, DBGrids, DB, DBClient, Provider, SqlExpr, ComCtrls;
+
+type
+  TForm1 = class(TForm)
+    PnlTopo: TPanel;
+    PnlMenu: TPanel;
+    PnlBaixo: TPanel;
+    PnlCentro: TPanel;
+    LogoCentral: TImage;
+    PnlLogo: TPanel;
+    LogoSuperior: TImage;
+    PnlLicensa: TPanel;
+    LblLcensiado: TLabel;
+    LblEmpresaLicensiada: TLabel;
+    PnlSAIR: TPanel;
+    BtnSair: TSpeedButton;
+    PnlUsuario: TPanel;
+    PnlIMGUsuario: TPanel;
+    Image1: TImage;
+    LblUsuario: TLabel;
+    LblADM: TLabel;
+    BtnConfig: TSpeedButton;
+    BtnProduto: TSpeedButton;
+    BtnFornecedores: TSpeedButton;
+    BtnCaixa: TSpeedButton;
+    BtnClientes: TSpeedButton;
+    PnlVersao: TPanel;
+    LBLversao: TLabel;
+    MainMenu1: TMainMenu;
+    Configuraes1: TMenuItem;
+    Novo1: TMenuItem;
+    Abrir1: TMenuItem;
+    N1: TMenuItem;
+    Salvar1: TMenuItem;
+    SalvarTudo1: TMenuItem;
+    N2: TMenuItem;
+    Sair1: TMenuItem;
+    Clientes1: TMenuItem;
+    Cadastrar1: TMenuItem;
+    Registros1: TMenuItem;
+    Excluir1: TMenuItem;
+    Produtos1: TMenuItem;
+    Vendidos1: TMenuItem;
+    Estoque1: TMenuItem;
+    Usurios1: TMenuItem;
+    Administradores1: TMenuItem;
+    Funcionarios1: TMenuItem;
+    Clientes2: TMenuItem;
+    sqlCliente: TSQLDataSet;
+    dspCliente: TDataSetProvider;
+    cdsCliente: TClientDataSet;
+    dtsCliente: TDataSource;
+    cdsClienteID: TIntegerField;
+    cdsClienteFANTASIA: TStringField;
+    cdsClienteRAZAOSOCIAL: TStringField;
+    cdsClienteCNPJ: TStringField;
+    cdsClienteDDD: TStringField;
+    cdsClienteTELEFONE: TStringField;
+    PageCentro: TPageControl;
+    TsCliente: TTabSheet;
+    TsCaixa: TTabSheet;
+    TSfornecedor: TTabSheet;
+    TSprodutos: TTabSheet;
+    GridFornecedor: TDBGrid;
+    GridCentro: TDBGrid;
+    sqlFornecedor: TSQLDataSet;
+    dspFornecedor: TDataSetProvider;
+    cdsFornecedor: TClientDataSet;
+    dtsFornecedor: TDataSource;
+    cdsFornecedorID: TIntegerField;
+    cdsFornecedorFANTASIA: TStringField;
+    cdsFornecedorRAZAOSOCIAL: TStringField;
+    cdsFornecedorCNPJ: TStringField;
+    cdsFornecedorDDD: TStringField;
+    cdsFornecedorTELEFONE: TStringField;
+    cdsFornecedorINATIVO: TDateField;
+    GridProdutos: TDBGrid;
+    sqlProdutos: TSQLDataSet;
+    dspProdutos: TDataSetProvider;
+    cdsProdutos: TClientDataSet;
+    dtsProdutos: TDataSource;
+    cdsProdutosID: TIntegerField;
+    cdsProdutosTIPO: TStringField;
+    cdsProdutosDESCRICAO: TStringField;
+    cdsProdutosCUSTO: TFMTBCDField;
+    cdsProdutosLUCRO: TFMTBCDField;
+    procedure BtnProdutoClick(Sender: TObject);
+    procedure BtnFornecedoresClick(Sender: TObject);
+    procedure BtnClientesClick(Sender: TObject);
+    procedure BtnSairClick(Sender: TObject);
+
+
+  private
+
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+uses conexao.tech;
+
+{$R *.dfm}
+
+
+
+{ TForm1 }
+
+  procedure TForm1.BtnClientesClick(Sender: TObject);
+begin
+  cdsCliente.Open;
+  PageCentro.ActivePage := TsCliente;
+end;
+
+procedure TForm1.BtnFornecedoresClick(Sender: TObject);
+begin
+  cdsFornecedor.Open;
+  PageCentro.ActivePage := TSfornecedor;
+end;
+
+procedure TForm1.BtnProdutoClick(Sender: TObject);
+begin
+  cdsProdutos.Open;
+  PageCentro.ActivePage := TSprodutos;
+end;
+
+procedure TForm1.BtnSairClick(Sender: TObject);
+  begin
+  Application.Terminate;
+
+  end;
+
+
+  end.
+
+
+

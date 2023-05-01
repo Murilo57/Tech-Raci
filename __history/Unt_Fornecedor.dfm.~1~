@@ -1,0 +1,84 @@
+object Fornecedor: TFornecedor
+  Left = 0
+  Top = 0
+  Caption = 'Fornecedor'
+  ClientHeight = 544
+  ClientWidth = 869
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object PageCentro: TPageControl
+    Left = 0
+    Top = 0
+    Width = 869
+    Height = 544
+    ActivePage = TSfornecedor
+    Align = alClient
+    TabOrder = 0
+    ExplicitWidth = 643
+    ExplicitHeight = 271
+    object TSfornecedor: TTabSheet
+      Caption = 'Fornecedor'
+      ImageIndex = 2
+      ExplicitWidth = 635
+      ExplicitHeight = 243
+      object GridCentro: TDBGrid
+        Left = 0
+        Top = 0
+        Width = 861
+        Height = 516
+        Align = alClient
+        TabOrder = 0
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'ID'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'FANTASIA'
+            Width = 270
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'RAZAOSOCIAL'
+            Width = 280
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'CNPJ'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'DDD'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'TELEFONE'
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'INATIVO'
+            Visible = True
+          end>
+      end
+    end
+  end
+end

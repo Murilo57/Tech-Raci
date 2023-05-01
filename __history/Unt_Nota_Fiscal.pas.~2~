@@ -1,0 +1,84 @@
+unit Unt_Nota_Fiscal;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Menus, ExtCtrls, StdCtrls, FMTBcd, DB, DBClient, Provider, SqlExpr,
+  Grids, DBGrids, ComCtrls;
+
+type
+  TFrmNotaFiscal = class(TForm)
+    PnlTop: TPanel;
+    PnlProdutos: TPanel;
+    LblNota: TLabel;
+    PnlLogo: TPanel;
+    ImgNota: TImage;
+    MainMenu1: TMainMenu;
+    Configuraes1: TMenuItem;
+    Novo1: TMenuItem;
+    Abrir1: TMenuItem;
+    N1: TMenuItem;
+    Salvar1: TMenuItem;
+    SalvarTudo1: TMenuItem;
+    N2: TMenuItem;
+    Sair1: TMenuItem;
+    Usurios1: TMenuItem;
+    Administradores1: TMenuItem;
+    Funcionarios1: TMenuItem;
+    Clientes2: TMenuItem;
+    Clientes1: TMenuItem;
+    Cadastrar1: TMenuItem;
+    Registros1: TMenuItem;
+    Excluir1: TMenuItem;
+    Produtos1: TMenuItem;
+    Vendidos1: TMenuItem;
+    Estoque1: TMenuItem;
+    PageCentro: TPageControl;
+    tsConsulta: TTabSheet;
+    gbNota: TGroupBox;
+    DBGrid1: TDBGrid;
+    sqlNF: TSQLDataSet;
+    dspNF: TDataSetProvider;
+    cdsNF: TClientDataSet;
+    dtsNF: TDataSource;
+    cdsNFID: TIntegerField;
+    cdsNFNUMERO: TIntegerField;
+    cdsNFTIPODEST: TStringField;
+    cdsNFDATA_EMISSAO: TDateField;
+    cdsNFDATA_MOV: TDateField;
+    cdsNFHORA_MOV: TTimeField;
+    cdsNFNATUREZA_OPERACAO: TStringField;
+    cdsNFPESOBRUTO: TFMTBCDField;
+    cdsNFPESOLIQUIDO: TFMTBCDField;
+    CboxConsulta: TComboBox;
+    EdtConsulta: TEdit;
+    procedure FormCreate(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmNotaFiscal: TFrmNotaFiscal;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFrmNotaFiscal.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  //Ao fechar a tela é para desalocar da memória, para não ficar rodando em segundo plano sem utilidade
+    FrmNotaFiscal.free;
+end;
+
+procedure TFrmNotaFiscal.FormCreate(Sender: TObject);
+begin
+    //Ao abrir a tela da Nota Fiscal a primeira pagina a ser ativada da PAGECENTRO´é a TSCONSULTA
+    cdsNF.open;
+    PageCentro.ActivePage := tsConsulta;
+end;
+
+end.

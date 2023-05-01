@@ -1,0 +1,95 @@
+unit Unt_Estoque;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Menus, Grids, DBGrids, StdCtrls, ComCtrls, ExtCtrls, FMTBcd, DB,
+  DBClient, Provider, SqlExpr;
+
+type
+  TFrmEstoque = class(TForm)
+    PnlTop: TPanel;
+    PnlProdutos: TPanel;
+    LblEstoque: TLabel;
+    PnlLogo: TPanel;
+    ImgEstoque: TImage;
+    PageCentro: TPageControl;
+    TsConsulta: TTabSheet;
+    GroupBox1: TGroupBox;
+    CboxConsulta: TComboBox;
+    EdtConsulta: TEdit;
+    BtnConsulta: TButton;
+    GridEstoque: TDBGrid;
+    MainMenu1: TMainMenu;
+    Configuraes1: TMenuItem;
+    Novo1: TMenuItem;
+    Abrir1: TMenuItem;
+    N1: TMenuItem;
+    Salvar1: TMenuItem;
+    SalvarTudo1: TMenuItem;
+    N2: TMenuItem;
+    Sair1: TMenuItem;
+    Usurios1: TMenuItem;
+    Administradores1: TMenuItem;
+    Funcionarios1: TMenuItem;
+    Clientes2: TMenuItem;
+    Clientes1: TMenuItem;
+    Cadastrar1: TMenuItem;
+    Registros1: TMenuItem;
+    Excluir1: TMenuItem;
+    Produtos1: TMenuItem;
+    Vendidos1: TMenuItem;
+    Estoque1: TMenuItem;
+    sqlEstoque: TSQLDataSet;
+    dspEstoque: TDataSetProvider;
+    cdsEstoque: TClientDataSet;
+    dtsEstoque: TDataSource;
+    cdsEstoqueID: TIntegerField;
+    cdsEstoqueID_PRODUTO: TIntegerField;
+    cdsEstoqueLOCAL: TStringField;
+    cdsEstoqueQTDE: TFMTBCDField;
+    cdsEstoqueVALIDADE: TDateField;
+    cdsEstoqueDATAALT: TDateField;
+    cdsEstoqueHORAALT: TTimeField;
+    procedure BtnConsultaClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmEstoque: TFrmEstoque;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFrmEstoque.BtnConsultaClick(Sender: TObject);
+begin
+  //fecha o ClientDataSet que ja esta ativo com o True
+  cdsEstoque.close;
+  //Atualizando o filtro com sql concatenando o a informação do ComboBox e a informação do Edt
+  sqlEstoque.CommandText := 'SELECT * FROM ESTOQUE WHERE '+CboxConsulta.Text+' = '''+EdtConsulta.Text+'''';
+  //Abrir o ClientDataSet atualizando o filtro do SELECT acima
+  cdsEstoque.open;
+end;
+
+procedure TFrmEstoque.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  //Ao fechar a aba desaloca da memória para não ficar rodando em segundo plano sem necessidade
+  FrmEstoque.Free;
+end;
+
+procedure TFrmEstoque.FormCreate(Sender: TObject);
+begin
+  //chama a tabela do CLIENTDATASET
+  cdsEstoque.Open;
+  //A primeira tela a ser chamada vai ser o PAGECENTRO e a primeira TableSheet vai ser a CONSULTA
+  PageCentro.ActivePage := TsConsulta;
+end;
+
+end.

@@ -1,0 +1,81 @@
+unit Unt_Estoque;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Menus, Grids, DBGrids, StdCtrls, ComCtrls, ExtCtrls, FMTBcd, DB,
+  DBClient, Provider, SqlExpr;
+
+type
+  TFrmEstoque = class(TForm)
+    PnlTop: TPanel;
+    PnlProdutos: TPanel;
+    LblEstoque: TLabel;
+    PnlLogo: TPanel;
+    ImgEstoque: TImage;
+    PageCentro: TPageControl;
+    TsConsulta: TTabSheet;
+    GroupBox1: TGroupBox;
+    CboxConsulta: TComboBox;
+    EdtConsulta: TEdit;
+    BtnConsulta: TButton;
+    GridEstoque: TDBGrid;
+    MainMenu1: TMainMenu;
+    Configuraes1: TMenuItem;
+    Novo1: TMenuItem;
+    Abrir1: TMenuItem;
+    N1: TMenuItem;
+    Salvar1: TMenuItem;
+    SalvarTudo1: TMenuItem;
+    N2: TMenuItem;
+    Sair1: TMenuItem;
+    Usurios1: TMenuItem;
+    Administradores1: TMenuItem;
+    Funcionarios1: TMenuItem;
+    Clientes2: TMenuItem;
+    Clientes1: TMenuItem;
+    Cadastrar1: TMenuItem;
+    Registros1: TMenuItem;
+    Excluir1: TMenuItem;
+    Produtos1: TMenuItem;
+    Vendidos1: TMenuItem;
+    Estoque1: TMenuItem;
+    sqlEstoque: TSQLDataSet;
+    dspEstoque: TDataSetProvider;
+    cdsEstoque: TClientDataSet;
+    dtsEstoque: TDataSource;
+    cdsEstoqueID: TIntegerField;
+    cdsEstoqueID_PRODUTO: TIntegerField;
+    cdsEstoqueLOCAL: TStringField;
+    cdsEstoqueQTDE: TFMTBCDField;
+    cdsEstoqueVALIDADE: TDateField;
+    cdsEstoqueDATAALT: TDateField;
+    cdsEstoqueHORAALT: TTimeField;
+    procedure FormCreate(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmEstoque: TFrmEstoque;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFrmEstoque.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  FrmEstoque.Free;
+end;
+
+procedure TFrmEstoque.FormCreate(Sender: TObject);
+begin
+  FrmEstoque.Open;
+  PageCentro.ActivePage := TsConsulta;
+end;
+
+end.
